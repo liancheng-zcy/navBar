@@ -1,0 +1,35 @@
+<view class="lac-nav-bar {{extClass}}" style="background: {{backgroundColorTop}};height: {{navBarHeight}}px;">
+    <view class="lac-nav-bar__placeholder {{ios ? 'ios' : 'android'}}" style="padding-top: {{navBarHeight}}px;visibility: hidden;"></view>
+    <view class="lac-nav-bar__inner {{ios ? 'ios' : 'android'}}" style="{{navigationbarinnerStyle}}">
+        <view class='lac-nav-bar__left' style="{{navBarLeft}}">
+            <block wx:if="{{back&&!home}}">
+                <view bindtap="back" class="lac-nav-bar__button lac-nav-bar__btn_goback {{iconTheme}}"></view>
+            </block>
+            <block wx:if="{{!back&&home}}">
+                <view bindtap="home" class="lac-nav-bar__button lac-nav-bar__btn_gohome {{iconTheme}}"></view>
+            </block>
+            <block wx:elif="{{back&&home}}">
+                <view class="lac-nav-bar__buttons {{ios ? 'ios' : 'android'}}" wx:if="{{home}}">
+                    <view bindtap="back" class="lac-nav-bar__button lac-nav-bar__btn_goback {{iconTheme}}" wx:if="{{back}}"></view>
+                    <view bindtap="home" class="lac-nav-bar__button lac-nav-bar__btn_gohome {{iconTheme}}"></view>
+                </view>
+            </block>
+            <block wx:else>
+                <slot name="left"></slot>
+            </block>
+        </view>
+        <view class='lac-nav-bar__center'>
+            <block wx:if="{{title}}">
+                <text class=''>{{title}}</text>
+            </block>
+            <view class="" style="height:{{capsulePosition.height}}px;" wx:elif="{{searchBar}}">
+            </view>
+            <block wx:else>
+                <slot name="center"></slot>
+            </block>
+        </view>
+        <view class='lac-nav-bar__right'>
+            <slot name="right"></slot>
+        </view>
+    </view>
+</view>

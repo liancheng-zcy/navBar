@@ -1,0 +1,10 @@
+<s_navBar back="{{true}}" home="{{true}}" title="首页">
+  <!-- <view class="lac-nav-home-wrap" slot="center">
+      <view class="slogn">
+        专业的家居 建材直销平台 
+        <view class="arrow-right"></view>
+      </view>
+      <view class="tip">欧美品质 ｜ 大厂直供 ｜ 专家验厂 ｜ 售后无忧</view>
+  </view> -->
+</s_navBar>
+<view wx:for="gjaksg;jskgjsk;gjskgjsk;gskagaskdgask;gas;g" wx:key="index">{{index}}</view>
